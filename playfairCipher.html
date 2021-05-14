@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/playfair.css">
     <title>Playfair Cipher</title>
 </head>
 <body>
-    
+
+    <header>
+        <h1 class="text-center">Playfair cipher</h1>
+      </header>
+      
+      <main class="container">
+        <div class="row">
+          <div id="wrapper" class="col-xs-6 col-xs-4 col-sm-offset-4">
+          <div class="form-group">
+            <label class="control-label">Key word:</label>  
+            <input id="key" type="text" class="form-control" placeholder="Enter key" required>
+            <label class="control-label">Word or string:</label>
+            <input id="String" type="text" class="form-control otstup" placeholder="Enter a word or string">
+            <div>
+              <button class="btn btn-primary form-control" onclick="processKey(), cipher()">Code</button>
+            </div>
+            <div>
+              <h4 class="text-center" id="printValue"></h4>
+            </div>
+            <button class="btn btn-success form-control" onclick="deCodeCipher()">Decode</button>
+          </div>
+            <div>
+              <h4 class="text-center" id="printDeCode"></h4>
+            </div>
+          </div>
+        </div>
+      </main>
+      <script src="./js/playfairCipher.js"></script>  
 </body>
 </html>
+
