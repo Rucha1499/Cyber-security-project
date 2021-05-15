@@ -8,34 +8,26 @@
     <title>Playfair Cipher</title>
 </head>
 <body>
+  <div class="main-container">
+    <div class="title">
+      Playfair Cipher
+    </div>
+    <input id="key" type="text"/>
+    <input id="String" type="text"/>
 
-    <header>
-        <h1 class="text-center">Playfair cipher</h1>
-      </header>
-      
-      <main class="container">
-        <div class="row">
-          <div id="wrapper" class="col-xs-6 col-xs-4 col-sm-offset-4">
-          <div class="form-group">
-            <label class="control-label">Key word:</label>  
-            <input id="key" type="text" class="form-control" placeholder="Enter key" required>
-            <label class="control-label">Word or string:</label>
-            <input id="String" type="text" class="form-control otstup" placeholder="Enter a word or string">
-            <div>
-              <button class="btn btn-primary form-control" onclick="processKey(), cipher()">Code</button>
-            </div>
-            <div>
-              <h4 class="text-center" id="printValue"></h4>
-            </div>
-            <button class="btn btn-success form-control" onclick="deCodeCipher()">Decode</button>
-          </div>
-            <div>
-              <h4 class="text-center" id="printDeCode"></h4>
-            </div>
-          </div>
-        </div>
-      </main>
-      <script src="./js/playfairCipher.js"></script>  
+    <div class="buttons">
+      <button onclick="processKey(), cipher()">Code</button>
+      <button onclick="deCodeCipher()">Decode</button>
+    </div>
+    
+    <div id="printValue"></div>
+    <div id="printDeCode"></div>
+  </div>
+
+    
+    <script src="./js/playfairCipher.js"></script>  
 </body>
 </html>
 
+<!-- <button class="btn btn-primary form-control" onclick="processKey(), cipher()">Code</button>
+<button class="btn btn-success form-control" onclick="deCodeCipher()">Decode</button> -->
