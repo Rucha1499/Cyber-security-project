@@ -37,3 +37,29 @@ const caeserCipher = (plainText, shiftValue) => {
   return output;
 }
 
+const inputBox = document.getElementById("input-encrypt");
+const shiftBox = document.getElementById("shift-encrypt");
+const displayBox = document.getElementById("encrypt-output")
+let encryptedValue;
+
+document.getElementById("encrypt-button").addEventListener('click', (event) => {
+
+    encryptedValue = caeserCipher(inputBox.value , parseInt(shiftBox.value))
+    displayBox.innerText = `${encryptedValue}`
+
+})
+
+document.getElementById("decrypt-button").addEventListener('click', (event) => {
+
+    const negativeShiftValue = -1*(parseInt(shiftBox.value))
+
+    decryptedValue = caeserCipher(inputBox.value , negativeShiftValue)
+    displayBox.innerText = `${decryptedValue}`
+
+})
+ 
+
+
+
+
+
