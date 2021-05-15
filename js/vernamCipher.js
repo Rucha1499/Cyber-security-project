@@ -44,3 +44,17 @@ const decrypt = (cipherText, key ) => {
 	return out;
 }
 
+const inputBoxText = document.getElementById("input-plain-text");
+const inputBoxKey = document.getElementById("input-key");
+const displayBox = document.getElementById("output");
+let encryptedText, decryptedText;
+
+document.getElementById("encrypt").addEventListener('click',(event) => {
+	encryptedText = encrypt(inputBoxText.value, inputBoxKey.value)
+	displayBox.innerText = `${encryptedText}`
+})
+
+document.getElementById("decrypt").addEventListener('click',(event) => {
+	decryptedText = decrypt(inputBoxText.value, inputBoxKey.value)
+	displayBox.innerText = `${decryptedText}`
+})

@@ -40,7 +40,7 @@ const caeserCipher = (plainText, shiftValue) => {
 const inputBox = document.getElementById("input");
 const shiftBox = document.getElementById("shift");
 const displayBox = document.getElementById("output")
-let encryptedValue;
+let encryptedValue,decryptedValue;
 
 document.getElementById("encrypt-button").addEventListener('click', (event) => {
 
