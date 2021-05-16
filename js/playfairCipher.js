@@ -138,7 +138,7 @@ function cipher() {
     }
     enCodeStr = enCodeStr + coord1 + coord2;
   }
-  document.getElementById("printValue").innerHTML = enCodeStr;
+  document.getElementById("output").innerHTML = enCodeStr;
   
   return enCodeStr;
 }
@@ -149,7 +149,7 @@ function deCodeCipher() {
   var error = "Warning!!! String is empty";
   var text1 = cipher();
   if(text1 === '') {
-    document.getElementById('printDeCode').innerHTML = error;
+    document.getElementById('output').innerHTML = error;
   }
   var keyresult = processKey();
   for(var i = 0; i < text1.length; i += 2){

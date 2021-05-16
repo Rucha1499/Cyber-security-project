@@ -45,7 +45,7 @@ body {
     font-size: x-large;
     font-weight: bold;
     padding: 10px;
-    color: #ff8474;
+    color: #050A30;
 }
 
 .title {
@@ -60,11 +60,11 @@ a {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: large;
     font-weight: bolder;
-    color: #ff8474;
+    color: #000C66;
     
 }
 
 a:hover {
     font-size:x-large;
-    color:#ff8474;
+    color:#050A30;
 }
