@@ -1,23 +1,20 @@
-var isChet = false;
 var isEnd = false;
-var flag = false;
 var flagX = false;
 var flagAdd = false;
 
-function getKeyword(key) { 
-   var key = document.getElementById("key").value;
-   return document.getElementById("key").value;
+function getKey() { 
+  return document.getElementById("key").value;
 }
 
-function getString() {
+function getText() {
   return document.getElementById("String").value;
 }
 
-function processKey() { 
-  var key = getKeyword();
+function createMatrix() { 
+  var key = getKey();
   key = key.toUpperCase().replace(/\s/g, '').replace(/J/g, "I");
   var result = [];
-  var temp = '';
+  var temp = ''; 
   var alphabet = 'ABCDEFGHIKLMNOPQRSTUVWXYZ';
   for(var i = 0; i < key.length; i++) {
     if (alphabet.indexOf(key[i]) !== -1) {
@@ -35,19 +32,19 @@ function processKey() {
 }
 
 function cipher() {
-  var keyresult = processKey();
+  var matrix = createMatrix();
   var res = [];
   var error = 'Warning!!! String is empty';
-  var str = getString();
+  var str = getText();
   if(str === '') {
-    document.getElementById('printValue').innerHTML = error;
+    alert(error);
   }
   // var err = 'ERRORX';
   var textPhrase, separator;
   str = str.toUpperCase().replace(/\s/g, '').replace(/J/g, "I");
   if(str.length === 0) {
-    //document.getElementById("printValue").innerHTML = err.toUpperCase().replace(/\s/g, '').replace(/J/g, "I");
-    }
+    alert(error);
+  }
   else {
     textPhrase = str[0];
   }
@@ -90,15 +87,15 @@ function cipher() {
   	var pair1 = textPhrase[i];
   	var pair2 = textPhrase[i + 1];
   	var p1i, p1j, p2i, p2j;
-  	for(var stroka = 0; stroka < keyresult.length; stroka++) {
-	    for(var stolbec = 0; stolbec < keyresult[stroka].length; stolbec++){
-	      if (keyresult[stroka][stolbec] == pair1){
-	      	p1i = stroka;
-	      	p1j = stolbec;
+  	for(var row = 0; row < matrix.length; row++) {
+	    for(var column = 0; column < matrix[row].length; column++){
+	      if (matrix[row][column] == pair1){
+	      	p1i = row;
+	      	p1j = column;
 	      }
-	      if (keyresult[stroka][stolbec] == pair2){
-	      	p2i = stroka;
-	      	p2j = stolbec;
+	      if (matrix[row][column] == pair2){
+	      	p2i = row;
+	      	p2j = column;
 	      }
 	    }
 	  }
@@ -106,35 +103,35 @@ function cipher() {
     
     if(p1i === p2i) {
       if(p1j === 4) {
-        coord1 = keyresult[p1i][0];
+        coord1 = matrix[p1i][0];
       }
       else {
-        coord1 = keyresult[p1i][p1j + 1];
+        coord1 = matrix[p1i][p1j + 1];
       }
       if(p2j === 4) {
-        coord2 = keyresult[p2i][0];
+        coord2 = matrix[p2i][0];
       }
       else {
-        coord2 = keyresult[p2i][p2j + 1]
+        coord2 = matrix[p2i][p2j + 1]
       }
     }
     if(p1j === p2j) {
       if(p1i === 4) {
-        coord1 = keyresult[0][p1j];
+        coord1 = matrix[0][p1j];
       }
       else {
-        coord1 = keyresult[p1i + 1][p1j];
+        coord1 = matrix[p1i + 1][p1j];
       }
       if(p2i === 4) {
-        coord2 = keyresult[0][p2j];
+        coord2 = matrix[0][p2j];
       }
       else {
-        coord2 = keyresult[p2i + 1][p2j]
+        coord2 = matrix[p2i + 1][p2j]
       }
     }
     if(p1i !== p2i && p1j !== p2j) {
-      coord1 = keyresult[p1i][p2j];
-      coord2 = keyresult[p2i][p1j];
+      coord1 = matrix[p1i][p2j];
+      coord2 = matrix[p2i][p1j];
     }
     enCodeStr = enCodeStr + coord1 + coord2;
   }
@@ -147,24 +144,24 @@ function deCodeCipher() {
   var deCodeStr = '';
   var text = '';
   var error = "Warning!!! String is empty";
-  var text1 = cipher();
-  if(text1 === '') {
-    document.getElementById('output').innerHTML = error;
+  var cipherText = getText();
+  if(cipherText === '') {
+    alert(error);
   }
-  var keyresult = processKey();
-  for(var i = 0; i < text1.length; i += 2){
-  	var pair1 = text1[i];
-  	var pair2 = text1[i + 1];
+  var matrix = createMatrix();
+  for(var i = 0; i < cipherText.length; i += 2){
+  	var pair1 = cipherText[i];
+  	var pair2 = cipherText[i + 1];
   	var p1i, p1j, p2i, p2j;
-  	for(var stroka = 0; stroka < keyresult.length; stroka++) {
-	    for(var stolbec = 0; stolbec < keyresult[stroka].length; stolbec++){
-	      if (keyresult[stroka][stolbec] == pair1){
-	      	p1i = stroka;
-	      	p1j = stolbec;
+  	for(var row = 0; row < matrix.length; row++) {
+	    for(var column = 0; column < matrix[row].length; column++){
+	      if (matrix[row][column] == pair1){
+	      	p1i = row;
+	      	p1j = column;
 	      }
-	      if (keyresult[stroka][stolbec] == pair2){
-	      	p2i = stroka;
-	      	p2j = stolbec;
+	      if (matrix[row][column] == pair2){
+	      	p2i = row;
+	      	p2j = column;
 	      }
 	    }
 	  }
@@ -172,35 +169,35 @@ function deCodeCipher() {
     
     if(p1i === p2i) {
       if(p1j === 0) {
-        coord1 = keyresult[p1i][4];
+        coord1 = matrix[p1i][4];
       }
       else {
-        coord1 = keyresult[p1i][p1j - 1];
+        coord1 = matrix[p1i][p1j - 1];
       }
       if(p2j === 0) {
-        coord2 = keyresult[p2i][4];
+        coord2 = matrix[p2i][4];
       }
       else {
-        coord2 = keyresult[p2i][p2j - 1]
+        coord2 = matrix[p2i][p2j - 1]
       }
     }
     if(p1j === p2j) {
       if(p1i === 0) {
-        coord1 = keyresult[4][p1j]
+        coord1 = matrix[4][p1j]
       }
       else {
-        coord1 = keyresult[p1i - 1][p1j];
+        coord1 = matrix[p1i - 1][p1j];
       }
       if(p2i === 0) {
-        coord2 = keyresult[4][p2j];
+        coord2 = matrix[4][p2j];
       }
       else {
-        coord2 = keyresult[p2i - 1][p2j]
+        coord2 = matrix[p2i - 1][p2j]
       }
     }
     if(p1i !== p2i && p1j !== p2j) {
-      coord1 = keyresult[p1i][p2j];
-      coord2 = keyresult[p2i][p1j];
+      coord1 = matrix[p1i][p2j];
+      coord2 = matrix[p2i][p1j];
     }
     text = text + coord1 + coord2;
   }
