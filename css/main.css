@@ -61,10 +61,11 @@ a {
     font-size: large;
     font-weight: bolder;
     color: #000C66;
-    
+    text-decoration: none;
 }
 
 a:hover {
     font-size:x-large;
     color:#050A30;
+    text-decoration: underline;
 }
