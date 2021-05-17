@@ -1,0 +1,60 @@
+{
+  "_from": "crypto-classic-playfair",
+  "_id": "crypto-classic-playfair@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-EEaITlPQ51O/mvBLYnY/OXvLWQk=",
+  "_location": "/crypto-classic-playfair",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "crypto-classic-playfair",
+    "name": "crypto-classic-playfair",
+    "escapedName": "crypto-classic-playfair",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/crypto-classic-playfair/-/crypto-classic-playfair-1.0.0.tgz",
+  "_shasum": "1046884e53d0e753bf9af04b62763f397bcb5909",
+  "_spec": "crypto-classic-playfair",
+  "_where": "/home/swaraj/Projects/Cyber-security-project",
+  "author": {
+    "name": "Andrew Lowe",
+    "email": "andrew@lostways.com",
+    "url": "http://lostways.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/lostways/crypto-classic-playfair/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "crypto-classic-utils": "^1.0.0"
+  },
+  "deprecated": false,
+  "description": "classic playfair cipher",
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  },
+  "homepage": "https://github.com/lostways/crypto-classic-playfair",
+  "keywords": [
+    "classic",
+    "crypto",
+    "playfair"
+  ],
+  "license": "ISC",
+  "main": "playfair.js",
+  "name": "crypto-classic-playfair",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lostways/crypto-classic-playfair.git"
+  },
+  "scripts": {
+    "test": "jasmine-node spec/"
+  },
+  "version": "1.0.0"
+}

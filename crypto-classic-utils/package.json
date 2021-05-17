@@ -1,0 +1,55 @@
+{
+  "_from": "crypto-classic-utils@^1.0.0",
+  "_id": "crypto-classic-utils@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-JQL+0KQyUIxnvYmmhNvNAnM5SAg=",
+  "_location": "/crypto-classic-utils",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "crypto-classic-utils@^1.0.0",
+    "name": "crypto-classic-utils",
+    "escapedName": "crypto-classic-utils",
+    "rawSpec": "^1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.0"
+  },
+  "_requiredBy": [
+    "/crypto-classic-playfair"
+  ],
+  "_resolved": "https://registry.npmjs.org/crypto-classic-utils/-/crypto-classic-utils-1.0.0.tgz",
+  "_shasum": "2502fed0a432508c67bd89a684dbcd0273394808",
+  "_spec": "crypto-classic-utils@^1.0.0",
+  "_where": "/home/swaraj/Projects/Cyber-security-project/node_modules/crypto-classic-playfair",
+  "author": {
+    "name": "Andrew Lowe",
+    "email": "andrew@lostways.com",
+    "url": "http://lostways.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/lostways/crypto-classic-utils/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "utils for classic cryptography",
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  },
+  "homepage": "https://github.com/lostways/crypto-classic-utils",
+  "keywords": [
+    "cryptography",
+    "classic"
+  ],
+  "license": "ISC",
+  "main": "utils.js",
+  "name": "crypto-classic-utils",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lostways/crypto-classic-utils.git"
+  },
+  "scripts": {
+    "test": "jasmine-node spec/"
+  },
+  "version": "1.0.0"
+}
