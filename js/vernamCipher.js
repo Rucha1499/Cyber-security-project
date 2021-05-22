@@ -45,6 +45,7 @@ const decrypt = (cipherText, key ) => {
 }
 
 const inputBoxText = document.getElementById("input-plain-text");
+console.log(inputBoxText)
 const inputBoxKey = document.getElementById("input-key");
 const displayBox = document.getElementById("output");
 let encryptedText, decryptedText;
